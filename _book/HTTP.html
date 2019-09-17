@@ -1,0 +1,538 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HTTP · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="TCP.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="TCP.html">
+            
+                <a href="TCP.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="HTTP.html">
+            
+                <a href="HTTP.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >HTTP</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="http"><center>HTTP</center></h1>
+<h2 id=""><center></center></h2>
+<h2 id="&#x7B80;&#x4ECB;"><center>&#x7B80;&#x4ECB;</center></h2>
+<p>HTTP -&gt; HyperText Transfer Protocol &#x8D85;&#x6587;&#x672C;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#xFF0C;&#x57FA;&#x4E8E;TCP/IP&#x534F;&#x8BAE;&#x7684;&#x5E94;&#x7528;&#x5C42;&#x534F;&#x8BAE;</p>
+<p>&#x9ED8;&#x8BA4;&#x7684;HTTP&#x7AEF;&#x53E3;&#x53F7;&#x662F;80&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x8F93;&#x5165;baidu.com&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x7684;&#x662F;baidu.com:80</p>
+<p>&#x5177;&#x6709;&#x4E09;&#x4E2A;&#x7279;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>HTTP&#x662F;&#x65E0;&#x8FDE;&#x63A5;&#xFF1A;&#x65E0;&#x8FDE;&#x63A5;&#x7684;&#x542B;&#x4E49;&#x662F;&#x9650;&#x5236;&#x6BCF;&#x6B21;&#x8FDE;&#x63A5;&#x53EA;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x3002;&#x670D;&#x52A1;&#x5668;&#x5904;&#x7406;&#x5B8C;&#x5BA2;&#x6237;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x5E76;&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7684;&#x5E94;&#x7B54;&#x540E;&#xFF0C;&#x5373;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x3002;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x4F20;&#x8F93;&#x65F6;&#x95F4;&#x3002;&#xFF08;&#x6211;&#x600E;&#x4E48;&#x8BB0;&#x5F97;1.1&#x4E4B;&#x540E;&#x5141;&#x8BB8;TCP&#x8FDE;&#x63A5;&#x91CD;&#x7528;&#xFF09;</li>
+<li>HTTP&#x662F;&#x5A92;&#x4F53;&#x72EC;&#x7ACB;&#x7684;&#xFF1A;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x53EA;&#x8981;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#xFF0C;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;HTTP&#x53D1;&#x9001;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4EE5;&#x53CA;&#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x9002;&#x5408;&#x7684;MIME-type&#x5185;&#x5BB9;&#x7C7B;&#x578B;&#x3002;</li>
+<li>HTTP&#x662F;&#x65E0;&#x72B6;&#x6001;&#xFF1A;HTTP&#x534F;&#x8BAE;&#x662F;&#x65E0;&#x72B6;&#x6001;&#x534F;&#x8BAE;&#x3002;&#x65E0;&#x72B6;&#x6001;&#x662F;&#x6307;&#x534F;&#x8BAE;&#x5BF9;&#x4E8E;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x6CA1;&#x6709;&#x8BB0;&#x5FC6;&#x80FD;&#x529B;&#x3002;&#x7F3A;&#x5C11;&#x72B6;&#x6001;&#x610F;&#x5473;&#x7740;&#x5982;&#x679C;&#x540E;&#x7EED;&#x5904;&#x7406;&#x9700;&#x8981;&#x524D;&#x9762;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5219;&#x5B83;&#x5FC5;&#x987B;&#x91CD;&#x4F20;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6BCF;&#x6B21;&#x8FDE;&#x63A5;&#x4F20;&#x9001;&#x7684;&#x6570;&#x636E;&#x91CF;&#x589E;&#x5927;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x9700;&#x8981;&#x5148;&#x524D;&#x4FE1;&#x606F;&#x65F6;&#x5B83;&#x7684;&#x5E94;&#x7B54;&#x5C31;&#x8F83;&#x5FEB;&#x3002;</li>
+</ol>
+<h2 id="&#x6D88;&#x606F;&#x7ED3;&#x6784;"><center>&#x6D88;&#x606F;&#x7ED3;&#x6784;</center></h2>
+<h3 id="&#x8BF7;&#x6C42;&#x6D88;&#x606F;&#x7ED3;&#x6784;">&#x8BF7;&#x6C42;&#x6D88;&#x606F;&#x7ED3;&#x6784;</h3>
+<ul>
+<li>&#x8BF7;&#x6C42;&#x884C;</li>
+<li>&#x8BF7;&#x6C42;&#x5934;&#x90E8;</li>
+<li>&#x7A7A;&#x884C;</li>
+<li>&#x8BF7;&#x6C42;&#x6570;&#x636E;</li>
+</ul>
+<p><img src="gitbook/images/HTTP_1.png" alt="HTTP-request"></p>
+<h3 id="&#x54CD;&#x5E94;&#x6D88;&#x606F;&#x7ED3;&#x6784;">&#x54CD;&#x5E94;&#x6D88;&#x606F;&#x7ED3;&#x6784;</h3>
+<ul>
+<li>&#x72B6;&#x6001;&#x884C;</li>
+<li>&#x6D88;&#x606F;&#x62A5;&#x5934;</li>
+<li>&#x7A7A;&#x884C;</li>
+<li>&#x54CD;&#x5E94;&#x6B63;&#x6587;</li>
+</ul>
+<p><img src="gitbook/images/HTTP_2.png" alt="HTTP-response"></p>
+<h2 id="http&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;"><center>HTTP&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</center></h2>
+<p>1.0&#x7248;&#x672C;&#x53EA;&#x6709;&#x4E09;&#x79CD;GET, POST &#x548C; HEAD&#xFF0C;1.1&#x65B0;&#x589E;6&#x79CD;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x65B9;&#x6CD5;</th>
+<th style="text-align:center">&#x529F;&#x80FD;&#x5B9A;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GET</td>
+<td style="text-align:center">&#x8BF7;&#x6C42;&#x6307;&#x5B9A;&#x7684;&#x9875;&#x9762;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;</td>
+</tr>
+<tr>
+<td style="text-align:center">HEAD</td>
+<td style="text-align:center">&#x7C7B;&#x4F3C;&#x4E8E; GET &#x8BF7;&#x6C42;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x4E2D;&#x6CA1;&#x6709;&#x5177;&#x4F53;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x62A5;&#x5934;</td>
+</tr>
+<tr>
+<td style="text-align:center">POST</td>
+<td style="text-align:center">&#x5411;&#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x63D0;&#x4EA4;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#xFF08;&#x4F8B;&#x5982;&#x63D0;&#x4EA4;&#x8868;&#x5355;&#x6216;&#x8005;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#xFF09;&#x3002;&#x6570;&#x636E;&#x88AB;&#x5305;&#x542B;&#x5728;&#x8BF7;&#x6C42;&#x4F53;&#x4E2D;&#x3002;POST &#x8BF7;&#x6C42;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x65B0;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x5EFA;&#x7ACB;&#x548C;/&#x6216;&#x5DF2;&#x6709;&#x8D44;&#x6E90;&#x7684;&#x4FEE;&#x6539;</td>
+</tr>
+<tr>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center">&#x4ECE;&#x5BA2;&#x6237;&#x7AEF;&#x5411;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x9001;&#x7684;&#x6570;&#x636E;&#x53D6;&#x4EE3;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x6863;&#x7684;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#x5668;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7684;&#x9875;&#x9762;</td>
+</tr>
+<tr>
+<td style="text-align:center">CONNECT</td>
+<td style="text-align:center">HTTP/1.1 &#x534F;&#x8BAE;&#x4E2D;&#x9884;&#x7559;&#x7ED9;&#x80FD;&#x591F;&#x5C06;&#x8FDE;&#x63A5;&#x6539;&#x4E3A;&#x7BA1;&#x9053;&#x65B9;&#x5F0F;&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;</td>
+</tr>
+<tr>
+<td style="text-align:center">OPTIONS</td>
+<td style="text-align:center">&#x5141;&#x8BB8;&#x5BA2;&#x6237;&#x7AEF;&#x67E5;&#x770B;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6027;&#x80FD;</td>
+</tr>
+<tr>
+<td style="text-align:center">TRACE</td>
+<td style="text-align:center">&#x56DE;&#x663E;&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x6216;&#x8BCA;&#x65AD;</td>
+</tr>
+<tr>
+<td style="text-align:center">PATCH</td>
+<td style="text-align:center">&#x662F;&#x5BF9; PUT &#x65B9;&#x6CD5;&#x7684;&#x8865;&#x5145;&#xFF0C;&#x7528;&#x6765;&#x5BF9;&#x5DF2;&#x77E5;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x5C40;&#x90E8;&#x66F4;&#x65B0;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http&#x54CD;&#x5E94;&#x5934;"><center>HTTP&#x54CD;&#x5E94;&#x5934;</center></h2>
+<ol>
+<li>Allow: &#x670D;&#x52A1;&#x5668;&#x652F;&#x6301;&#x54EA;&#x4E9B;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#xFF08;&#x5982;GET&#x3001;POST&#x7B49;&#xFF09;</li>
+<li>Content-Encoding: &#x6587;&#x6863;&#x7684;&#x7F16;&#x7801;&#xFF08;Encode&#xFF09;&#x65B9;&#x6CD5;&#x3002;&#x53EA;&#x6709;&#x5728;&#x89E3;&#x7801;&#x4E4B;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x5F97;&#x5230;Content-Type&#x5934;&#x6307;&#x5B9A;&#x7684;&#x5185;&#x5BB9;&#x7C7B;&#x578B;&#x3002;&#x5229;&#x7528;gzip&#x538B;&#x7F29;&#x6587;&#x6863;&#x80FD;&#x591F;&#x663E;&#x8457;&#x5730;&#x51CF;&#x5C11;HTML&#x6587;&#x6863;&#x7684;&#x4E0B;&#x8F7D;&#x65F6;&#x95F4;</li>
+<li>Content-Length :&#x8868;&#x793A;&#x5185;&#x5BB9;&#x957F;&#x5EA6;&#x3002;&#x53EA;&#x6709;&#x5F53;&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;&#x6301;&#x4E45;HTTP&#x8FDE;&#x63A5;&#x65F6;&#x624D;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x3002;</li>
+<li>Content-Type: &#x8868;&#x793A;&#x540E;&#x9762;&#x7684;&#x6587;&#x6863;&#x5C5E;&#x4E8E;&#x4EC0;&#x4E48;MIME&#x7C7B;&#x578B;&#x3002;</li>
+<li>Data: &#x5F53;&#x524D;&#x7684;GMT&#x65F6;&#x95F4;&#x3002;</li>
+<li>Expires: &#x8BBE;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x6587;&#x6863;&#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;</li>
+<li>Cache-Control: Expires&#x8BBE;&#x7F6E;&#x7684;&#x662F;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x56E0;&#x6B64;&#x8981;&#x6C42;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x65F6;&#x95F4;&#x4E00;&#x81F4;&#xFF0C;&#x800C;1.1&#x4E4B;&#x540E;&#x63D0;&#x51FA;&#x7684; Cache-Control &#x89E3;&#x51B3;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#x591A;&#x5C11;&#x79D2;</li>
+<li>Location&#xFF1A;&#x91CD;&#x5B9A;&#x5411;&#xFF1F;</li>
+<li>Refresh&#xFF1A;&#x8868;&#x793A;&#x6D4F;&#x89C8;&#x5668;&#x5E94;&#x8BE5;&#x5728;&#x591A;&#x5C11;&#x65F6;&#x95F4;&#x4E4B;&#x540E;&#x5237;&#x65B0;&#x6587;&#x6863;&#xFF0C;&#x4EE5;&#x79D2;&#x8BA1;&#xFF1F;</li>
+<li>Server&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x540D;&#x5B57;&#x3002;</li>
+<li>Set-Cookie&#xFF1A;&#x8BBE;&#x7F6E;&#x548C;&#x9875;&#x9762;&#x5173;&#x8054;&#x7684;Cookie&#x3002;</li>
+<li>WWW-Authenticate&#xFF1A;&#x5BA2;&#x6237;&#x5E94;&#x8BE5;&#x5728;Authorization&#x5934;&#x4E2D;&#x63D0;&#x4F9B;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#x6388;&#x6743;&#x4FE1;&#x606F;&#xFF1F;</li>
+<li>Last-Modified&#xFF1A;&#x6587;&#x6863;&#x7684;&#x6700;&#x540E;&#x6539;&#x52A8;&#x65F6;&#x95F4;</li>
+<li>Content-Disposition&#xFF1A;&#x8868;&#x793A;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x8BBE;&#x7F6E;&#x4E0B;&#x8F7D;&#x65B9;&#x5F0F;&#x4EE5;&#x53CA;&#x4E0B;&#x8F7D;&#x65F6;&#x7684;&#x9ED8;&#x8BA4;&#x540D;</li>
+</ol>
+<h2 id="&#x72B6;&#x6001;&#x7801;"><center>&#x72B6;&#x6001;&#x7801;</center></h2>
+<p>&#x5F53;&#x6D4F;&#x89C8;&#x8005;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x65F6;&#xFF0C;&#x6D4F;&#x89C8;&#x8005;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5411;&#x7F51;&#x9875;&#x6240;&#x5728;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x3002;&#x5F53;&#x6D4F;&#x89C8;&#x5668;&#x63A5;&#x6536;&#x5E76;&#x663E;&#x793A;&#x7F51;&#x9875;&#x524D;&#xFF0C;&#x6B64;&#x7F51;&#x9875;&#x6240;&#x5728;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;HTTP&#x72B6;&#x6001;&#x7801;&#x7684;&#x4FE1;&#x606F;&#x5934;&#xFF08;server header&#xFF09;&#x7528;&#x4EE5;&#x54CD;&#x5E94;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8BF7;&#x6C42;&#x3002;</p>
+<ul>
+<li>200 - &#x8BF7;&#x6C42;&#x6210;&#x529F;</li>
+<li>301 - &#x8D44;&#x6E90;&#xFF08;&#x7F51;&#x9875;&#x7B49;&#xFF09;&#x88AB;&#x6C38;&#x4E45;&#x8F6C;&#x79FB;&#x5230;&#x5176;&#x5B83;URL</li>
+<li>404 - &#x8BF7;&#x6C42;&#x7684;&#x8D44;&#x6E90;&#xFF08;&#x7F51;&#x9875;&#x7B49;&#xFF09;&#x4E0D;&#x5B58;&#x5728;</li>
+<li>500 - &#x5185;&#x90E8;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;</li>
+</ul>
+<p>&#x7C97;&#x7565;&#x5206;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>1**&#xFF1A; &#x4FE1;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;&#x8BF7;&#x6C42;&#xFF0C;&#x9700;&#x8981;&#x8BF7;&#x6C42;&#x8005;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x64CD;&#x4F5C;</li>
+<li>2**&#xFF1A; &#x6210;&#x529F;&#xFF0C;&#x64CD;&#x4F5C;&#x88AB;&#x6210;&#x529F;&#x63A5;&#x6536;&#x5E76;&#x5904;&#x7406;</li>
+<li>3**&#xFF1A; &#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x64CD;&#x4F5C;&#x4EE5;&#x5B8C;&#x6210;&#x8BF7;&#x6C42;</li>
+<li>4**&#xFF1A; &#x5BA2;&#x6237;&#x7AEF;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x6C42;&#x5305;&#x542B;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x6216;&#x65E0;&#x6CD5;&#x5B8C;&#x6210;&#x8BF7;&#x6C42;</li>
+<li>5**&#xFF1A;    &#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5728;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x751F;&#x4E86;&#x9519;&#x8BEF;</li>
+</ul>
+<h2 id="&#x72B6;&#x6001;&#x7801;"><center>&#x72B6;&#x6001;&#x7801;</center></h2>
+<p>&#x8FD9;&#x592A;&#x591A;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x4E0A;&#x83DC;&#x9E1F;&#xFF1A;<strong><em><a href="https://www.runoob.com/http/http-content-type.html" title="HTTP Content-Type" target="_blank">HTTP Content-Type</a></em></strong></p>
+<h2 id="http-vs-https"><center>HTTP vs HTTPS</center></h2>
+<ol>
+<li>HTTP &#x7684;URL &#x4EE5;http:// &#x5F00;&#x5934;&#xFF0C;&#x800C;HTTPS &#x7684;URL &#x4EE5;https:// &#x5F00;&#x5934;</li>
+<li>HTTP &#x662F;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x800C; HTTPS &#x662F;&#x5B89;&#x5168;&#x7684;</li>
+<li>HTTP &#x6807;&#x51C6;&#x7AEF;&#x53E3;&#x662F;80 &#xFF0C;&#x800C; HTTPS &#x7684;&#x6807;&#x51C6;&#x7AEF;&#x53E3;&#x662F;443</li>
+<li>&#x5728;OSI &#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x4E2D;&#xFF0C;HTTP&#x5DE5;&#x4F5C;&#x4E8E;&#x5E94;&#x7528;&#x5C42;&#xFF0C;&#x800C;HTTPS &#x7684;&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x673A;&#x5236;&#x5DE5;&#x4F5C;&#x5728;&#x4F20;&#x8F93;&#x5C42;</li>
+<li>HTTP &#x65E0;&#x6CD5;&#x52A0;&#x5BC6;&#xFF0C;&#x800C;HTTPS &#x5BF9;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;</li>
+<li>HTTP&#x65E0;&#x9700;&#x8BC1;&#x4E66;&#xFF0C;&#x800C;HTTPS &#x9700;&#x8981;CA&#x673A;&#x6784;wosign&#x7684;&#x9881;&#x53D1;&#x7684;SSL&#x8BC1;&#x4E66;</li>
+</ol>
+<h2 id="https"><center>HTTPS</center></h2>
+<p>HTTPS = HTTP + SSL</p>
+<p>&#x6570;&#x636E;&#x6BB5;&#x662F;&#x52A0;&#x5BC6;&#x8FC7;&#x7684;&#xFF0C;&#x975E;&#x660E;&#x6587;&#x7684;</p>
+<p>&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;&#x5BC6;&#x94A5;&#x540C;&#x65F6;&#x7528;&#x6765;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;</p>
+<p>&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;&#x516C;&#x94A5;&#x52A0;&#x5BC6;&#xFF0C;&#x79C1;&#x94A5;&#x5219;&#x89E3;&#x5BC6;&#xFF1B;&#x79C1;&#x94A5;&#x52A0;&#x5BC6;&#xFF0C;&#x516C;&#x94A5;&#x5219;&#x89E3;&#x5BC6;</p>
+<p>&#x8BC1;&#x4E66;&#x7EC4;&#x6210;&#xFF1A;&#x516C;&#x8BC1;&#x65B9;&#x7528;&#x81EA;&#x8EAB;&#x79C1;&#x94A5;&#x52A0;&#x5BC6;&#x670D;&#x52A1;&#x7AEF;&#x516C;&#x94A5;&#x4EE5;&#x53CA;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#xFF0C;&#x660E;&#x6587;&#x8868;&#x793A;&#x516C;&#x8BC1;&#x65B9;&#x673A;&#x6784;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x7F51;&#x5740;</p>
+<p>&#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#xFF1A;&#x516C;&#x8BC1;&#x65B9;&#x6839;&#x636E;&#x670D;&#x52A1;&#x7AEF;&#x7F51;&#x5740;&#x7B49;&#x4FE1;&#x606F;&#x751F;&#x6210;</p>
+<p><img src="gitbook/images/HTTPS_2.png" alt="&#x8BC1;&#x4E66;&#x7EC4;&#x6210;"></p>
+<p>HTTP&#x5230;HTTPS&#x7684;&#x8FDB;&#x5316;&#x53F2;&#xFF1A;</p>
+<ol>
+<li>&#x6700;&#x521D;&#x6570;&#x636E;&#x660E;&#x6587;&#x4F20;&#x8F93;&#xFF0C;&#x6570;&#x636E;&#x88AB;&#x4E2D;&#x9014;&#x6293;&#x5305;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x7684;&#x6CC4;&#x9732;&#xFF0C;&#x56E0;&#x6B64;&#x63D0;&#x51FA;&#x4E86;&#x5BF9;&#x79F0;&#x5BC6;&#x94A5;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BC6;&#x94A5;&#x6765;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#xFF0C;&#x7136;&#x540E;&#x53CC;&#x65B9;&#x63D0;&#x524D;&#x53D1;&#x9001;&#x5404;&#x81EA;&#x7684;&#x5BC6;&#x94A5;&#x5373;&#x53EF;</li>
+<li>&#x867D;&#x7136;&#x6709;&#x4E86;&#x5BF9;&#x79F0;&#x5BC6;&#x94A5;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x521D;&#x7684;&#x5BC6;&#x94A5;&#x662F;&#x660E;&#x6587;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5F53;&#x5BC6;&#x94A5;&#x88AB;&#x622A;&#x83B7;&#xFF0C;&#x5C31;&#x56DE;&#x5230;&#x4E86;&#x8D77;&#x70B9;&#xFF0C;&#x4E3A;&#x4E86;&#x964D;&#x4F4E;&#x5BC6;&#x94A5;&#x88AB;&#x622A;&#x83B7;&#x7684;&#x98CE;&#x9669;&#xFF0C;&#x63D0;&#x51FA;&#x4E86;&#x975E;&#x5BF9;&#x79F0;&#x5BC6;&#x94A5;&#xFF0C;&#x4E3E;&#x4F8B;&#xFF1A;A&#x9996;&#x5148;&#x660E;&#x6587;&#x53D1;&#x9001;&#x516C;&#x94A5;&#x7ED9;B&#xFF0C;B&#x7528;A&#x7684;&#x516C;&#x94A5;&#x52A0;&#x5BC6;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x94A5;&#x7136;&#x540E;&#x53D1;&#x9001;&#x7ED9;A&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EA;&#x6709;A&#x7684;&#x516C;&#x94A5;&#x662F;&#x660E;&#x6587;&#x7684;&#xFF0C;&#x964D;&#x4F4E;&#x98CE;&#x9669;</li>
+<li>&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x53EA;&#x662F;&#x964D;&#x4F4E;&#x98CE;&#x9669;&#xFF0C;&#x5E76;&#x975E;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x3002;&#x5F53;&#x4E0A;&#x9762;A&#x7684;&#x516C;&#x94A5;&#x4E5F;&#x88AB;&#x622A;&#x83B7;&#xFF0C;hacker&#x4FEE;&#x6539;A&#x516C;&#x94A5;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x94A5;&#xFF0C;&#x53D1;&#x9001;&#x7ED9;B&#xFF0C;&#x7136;&#x540E;&#x518D;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x94A5;&#x89E3;&#x5BC6;&#x51FA;B&#x7684;&#x516C;&#x94A5;&#xFF0C;&#x6B64;&#x65F6;A,B&#x7684;&#x6570;&#x636E;&#x5BF9;hacker&#x5C06;&#x53D8;&#x900F;&#x660E;&#xFF08;&#x4E0D;&#x8FC7;&#x6B64;&#x65F6;hacker&#x65E0;&#x6CD5;&#x4F2A;&#x9020;&#xFF0C;&#x56E0;&#x4E3A;&#x4F2A;&#x9020;&#x9700;&#x8981;&#x77E5;&#x9053;&#x4E24;&#x8005;&#x7684;&#x79C1;&#x94A5;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5B9E;&#x73B0;&#x4F2A;&#x9020;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x622A;&#x83B7;&#x4E24;&#x8005;&#x7684;&#x6240;&#x6709;&#x6D88;&#x606F;&#x5E76;&#x505A;&#x8F6C;&#x53D1;&#xFF0C;&#x6210;&#x4E3A;&#x4E24;&#x8005;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;
+<img src="gitbook/images/HTTPS_1.png" alt="&#x7834;&#x89E3;&#x975E;&#x5BF9;&#x79F0;&#x5BC6;&#x94A5;"></li>
+<li>&#x7EFC;&#x4E0A;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x4E24;&#x8005;&#x4E2D;&#x6709;&#x4E00;&#x6B21;&#x660E;&#x6587;&#x4F20;&#x8F93;&#x5BC6;&#x94A5;&#xFF0C;&#x5C31;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x707E;&#x96BE;&#x3002;&#x56E0;&#x6B64;&#x51FA;&#x73B0;&#x4E86;&#x7B2C;&#x4E09;&#x65B9;&#x516C;&#x8BC1;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x5148;&#x53BB;&#x6743;&#x5A01;&#x8BC1;&#x4E66;&#x673A;&#x6784;&#x6CE8;&#x518C;&#x8BC1;&#x4E66;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4EA4;&#x4E92;&#x524D;&#x5148;&#x53D1;&#x9001;&#x8BE5;&#x8BC1;&#x4E66;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x56E0;&#x4E3A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x6D4F;&#x89C8;&#x5668;&#x7EF4;&#x62A4;&#x4E86;&#x6240;&#x6709;&#x6743;&#x5A01;&#x8BC1;&#x4E66;&#x673A;&#x6784;&#x7684;&#x540D;&#x79F0;&#x548C;&#x516C;&#x94A5;&#xFF0C;&#x6240;&#x4EE5;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x89E3;&#x5BC6;&#x51FA;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x516C;&#x94A5;&#xFF0C;&#x5982;&#x679C;&#x8BC1;&#x4E66;&#x7B7E;&#x540D;&#x6B63;&#x786E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x8BE5;&#x516C;&#x94A5;&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x4EA4;&#x4E92;&#x3002;</li>
+</ol>
+<h2 id="&#x4E0E;python&#x7684;&#x4EA4;&#x4E92;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;"><center>&#x4E0E;python&#x7684;&#x4EA4;&#x4E92;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;</center></h2>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x4E00;&#x822C;&#x4F7F;&#x7528;web&#x6846;&#x67B6;</p>
+<p>Requests: <strong><em><a href="http://cn.python-requests.org/zh_CN/latest/index.html" title="&#x7B2C;&#x4E09;&#x65B9;Request&#x6A21;&#x5757;&#x5B98;&#x65B9;&#x4E2D;&#x6587;&#x6587;&#x6863;" target="_blank">&#x7B2C;&#x4E09;&#x65B9;Request&#x6A21;&#x5757;&#x5B98;&#x65B9;&#x4E2D;&#x6587;&#x6587;&#x6863;</a></em></strong>
+Requests &#x5B8C;&#x5168;&#x6EE1;&#x8DB3;&#x4ECA;&#x65E5; web &#x7684;&#x9700;&#x6C42;:</p>
+<ul>
+<li>Keep-Alive &amp; &#x8FDE;&#x63A5;&#x6C60;</li>
+<li>&#x56FD;&#x9645;&#x5316;&#x57DF;&#x540D;&#x548C; URL</li>
+<li>&#x5E26;&#x6301;&#x4E45; Cookie &#x7684;&#x4F1A;&#x8BDD;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x5F0F;&#x7684; SSL &#x8BA4;&#x8BC1;</li>
+<li>&#x81EA;&#x52A8;&#x5185;&#x5BB9;&#x89E3;&#x7801;</li>
+<li>&#x57FA;&#x672C;/&#x6458;&#x8981;&#x5F0F;&#x7684;&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;</li>
+<li>&#x4F18;&#x96C5;&#x7684; key/value Cookie</li>
+<li>&#x81EA;&#x52A8;&#x89E3;&#x538B;</li>
+<li>Unicode &#x54CD;&#x5E94;&#x4F53;</li>
+<li>HTTP(S) &#x4EE3;&#x7406;&#x652F;&#x6301;</li>
+<li>&#x6587;&#x4EF6;&#x5206;&#x5757;&#x4E0A;&#x4F20;</li>
+<li>&#x6D41;&#x4E0B;&#x8F7D;</li>
+<li>&#x8FDE;&#x63A5;&#x8D85;&#x65F6;</li>
+<li>&#x5206;&#x5757;&#x8BF7;&#x6C42;</li>
+<li>&#x652F;&#x6301; .netrc</li>
+<li>&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x4E3A; URL &#x6DFB;&#x52A0;&#x67E5;&#x8BE2;&#x5B57;&#x4E32;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x5BF9; POST &#x6570;&#x636E;&#x8FDB;&#x884C;&#x8868;&#x5355;&#x7F16;&#x7801;&#x3002;Keep-alive &#x548C; HTTP &#x8FDE;&#x63A5;&#x6C60;&#x7684;&#x529F;&#x80FD;&#x662F; 100% &#x81EA;&#x52A8;&#x5316;&#x7684;</li>
+</ul>
+<p>&#x652F;&#x6301;&#x7684;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>request(method, url, **kwargs)
+get(url, params=None, **kwargs) -&gt; request(&apos;get&apos;, url, params=params, **kwargs)
+options(url, **kwargs)          -&gt; request(&apos;options&apos;, url, **kwargs)
+head(url, **kwargs)             -&gt; request(&apos;head&apos;, url, **kwargs)
+post(url, data=None, json=None, **kwargs) -&gt; request(&apos;post&apos;, url, data=data, json=json, **kwargs)
+put(url, data=None, **kwargs)   -&gt; request(&apos;put&apos;, url, data=data, **kwargs)
+patch(url, data=None, **kwargs) -&gt; request(&apos;patch&apos;, url, data=data, **kwargs)
+delete(url, **kwargs)           -&gt; request(&apos;delete&apos;, url, **kwargs)
+</code></pre><pre><code>Request&#x5BF9;&#x8C61;&#x5C5E;&#x6027;
+class Request(RequestHooksMixin):
+    def __init__(self,
+                method=None, url=None, headers=None, files=None, data=None,
+                params=None, auth=None, cookies=None, hooks=None, json=None):
+
+
+method  -&gt; str                  #&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;
+url     -&gt; str                  #&#x8BF7;&#x6C42;&#x5730;&#x5740;
+headers -&gt; dict                 #&#x8BF7;&#x6C42;&#x5934;
+files   -&gt; dict/list            #POST&#x4E0A;&#x4F20;&#x6587;&#x4EF6;
+    multiple_files = [
+        (&apos;images&apos;, (&apos;foo.png&apos;, open(&apos;foo.png&apos;, &apos;rb&apos;), &apos;image/png&apos;)),
+        (&apos;images&apos;, (&apos;bar.png&apos;, open(&apos;bar.png&apos;, &apos;rb&apos;), &apos;image/png&apos;))]    #&#x6700;&#x597D;&#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x6A21;&#x5F0F;&#x6253;&#x5F00;&#x6587;&#x4EF6;
+    r = requests.post(&apos;http://httpbin.org/post&apos;, files=multiple_files)
+
+data    -&gt; dict                 #&#x6A21;&#x62DF;HTML&#x8868;&#x5355;&#x6570;&#x636E;
+params  -&gt; dict                 #URL &#x53C2;&#x6570;&#xFF0C;&#x81EA;&#x52A8;&#x6784;&#x5EFA;URL
+    payload = {&apos;key1&apos;: &apos;value1&apos;, &apos;key2&apos;: [&apos;value2&apos;, &apos;value3&apos;]}
+    r = requests.get(&apos;http://httpbin.org/get&apos;, params=payload)
+    http://httpbin.org/get?key1=value1&amp;key2=value2&amp;key2=value3
+
+auth    -&gt; HTTPDigestAuth/HTTPBasicAuth/&#x81EA;&#x5B9A;&#x4E49;  #&#x6307;&#x5B9A;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x673A;&#x5236;&#xFF0C;&#x5173;&#x4E8E;username/password&#x7684;&#x7F16;&#x7801;&#x683C;&#x5F0F;
+cookies -&gt; dict                 #&#x8BBE;&#x7F6E;cookie
+hooks   -&gt; dict                 #&#x8BBE;&#x7F6E;&#x94A9;&#x5B50;&#x51FD;&#x6570;
+    def print_url(r, *args, **kwargs):  # r&#x662F;&#x4F20;&#x5165;&#x7684;response
+        print(r.url)
+    requests.get(&apos;http://httpbin.org&apos;, hooks=dict(response=print_url))
+
+json    -&gt; dict                 #&#x81EA;&#x52A8;&#x5C06;dict&#x6309;json&#x683C;&#x5F0F;&#x7F16;&#x7801;
+</code></pre><pre><code>Response&#x5BF9;&#x8C61;&#x5C5E;&#x6027;
+class Response(object):
+    __attrs__ = [
+        &apos;_content&apos;, &apos;status_code&apos;, &apos;headers&apos;, &apos;url&apos;, &apos;history&apos;,
+        &apos;encoding&apos;, &apos;reason&apos;, &apos;cookies&apos;, &apos;elapsed&apos;, &apos;request&apos;
+    ]
+
+    _content    # Response&#x63D0;&#x4F9B;&#x4E86;&#x63A5;&#x53E3;&#x7C7B; content() , &#x8FD4;&#x56DE;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;
+    text()      # &#x8FD4;&#x56DE;unicode&#x7F16;&#x7801;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x679C;encoding&#x4E3A;&#x7A7A;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;chardet&#x6A21;&#x5757;&#x6765;&#x731C;&#x7F16;&#x7801;
+    history     # &#x8FD4;&#x56DE;&#x67D0;&#x4E2A;&#x8BF7;&#x6C42;&#x7684;&#x5386;&#x53F2;response&#x5BF9;&#x8C61;list&#xFF0C;&#x91CD;&#x5B9A;&#x5411;&#x4F1A;&#xFF1F;&#xFF1F;&#xFF1F;
+    reason      # &#x8FD4;&#x56DE;&#x6587;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x72B6;&#x6001;&#xFF0C;e.g. &quot;Not Found&quot; or &quot;OK&quot;
+    elappsed    # &#x8FD4;&#x56DE; &#x53D1;&#x9001;request &#x5230; &#x6536;&#x5230;response&#x7684;&#x65F6;&#x95F4;
+    request     # response &#x5BF9;&#x8C61;&#x5BF9;&#x5E94;&#x7684; request&#xFF1F;&#xFF1F;&#xFF1F;
+</code></pre><h2 id="&#x4E0E;django&#x7684;&#x4EA4;&#x4E92;"><center>&#x4E0E;django&#x7684;&#x4EA4;&#x4E92;</center></h2>
+<h3 id="&#x914D;&#x7F6E;url">&#x914D;&#x7F6E;URL</h3>
+<p>&#x5728;app.urls.py&#x6587;&#x4EF6;&#x7F16;&#x8F91;URL&#x5982;&#x4E0B;&#x683C;&#x5F0F;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5728;&#x53BB;project.urls&#x90A3;&#x91CC;&#x5F15;&#x5165;&#x5373;&#x53EF;</p>
+<pre><code># urls.py
+from django.urls import path
+from . import views
+urlpatterns = [
+    path(&apos;articles/2003/&apos;, views.special_case_2003),
+    path(&apos;articles/&lt;int:year&gt;/&apos;, views.year_archive),
+    path(&apos;articles/&lt;int:year&gt;/&lt;int:month&gt;/&apos;, views.month_archive)]
+</code></pre><h3 id="&#x89C6;&#x56FE;-&#x51FD;&#x6570;">&#x89C6;&#x56FE; &#x51FD;&#x6570;</h3>
+<p>&#x89C6;&#x56FE;&#xFF1A;</p>
+<pre><code># views.py
+from django.http import HttpResponse
+def my_view(request):
+    return HttpResponse(status=201) # Return a &quot;created&quot; (201) response code.
+</code></pre><h3 id="djangohttphttprequest">django.http.HttpRequest</h3>
+<p><strong><em><a href="https://docs.djangoproject.com/en/dev/ref/request-response/#django.http.HttpRequest" title="HttpRequest&#x7C7B;&#x5C5E;&#x6027;&#x5B98;&#x65B9;&#x6587;&#x6863;" target="_blank">HttpRequest&#x7C7B;&#x5C5E;&#x6027;&#x5B98;&#x65B9;&#x6587;&#x6863;</a></em></strong></p>
+<p>&#x5F53;&#x8BF7;&#x6C42;&#x5230;&#x6765;&#x65F6;&#xFF0C;django&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; HttpRequest &#x5BF9;&#x8C61;&#x6765;&#x5305;&#x542B;&#x8BF7;&#x6C42;&#x7684;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8FD9;&#x4E2A; HttpRequest &#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;</p>
+<pre><code># from django.http.request import HttpRequest / from django.http import HttpRequest&#xFF08;http&#x76EE;&#x5F55;&#x7684;__init__&#x6587;&#x4EF6;&#x5F15;&#x5165;&#x4E86;HttpRequest&#x7C7B;&#xFF09;
+# django.http.request.py
+class HttpRequest:
+    # A basic HTTP request&#x5BF9;&#x8C61;. #
+
+scheme             -&gt; str                                   # &#x6A21;&#x5F0F;&#xFF0C;HTTP &#x8FD8;&#x662F; HTTPS
+body               -&gt; bytes                                 # &#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#xFF0C;&#x539F;&#x751F; HTTP &#x8BF7;&#x6C42;&#x6570;&#x636E;
+path               -&gt; str                                   # &#x8BF7;&#x6C42;&#x7684;&#x5B8C;&#x6574;URL&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x6A21;&#x5F0F;&#x548C;&#x57DF;&#x540D;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&quot;/music/bands/the_beatles/&quot;
+path_info          -&gt; str                                   # &#x8BF7;&#x6C42;&#x7684; URL &#xFF0C;&#x53EA;&#x5305;&#x62EC; WSGIServer &#x53D1;&#x9001;&#x5230;app&#x7684;URL
+method             -&gt; str                                   # &#x8BF7;&#x6C42;&#x65B9;&#x6CD5;
+encoding           -&gt; str                                   # &#x8BF7;&#x6C42;&#x6570;&#x636E;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x662F; None &#x5219;&#x4F7F;&#x7528; DEFAULT_CHARSET &#x9ED8;&#x8BA4;&#x5B57;&#x7B26;&#x914D;&#x7F6E;
+content_type       -&gt; str                                   # ????
+GET                -&gt; QueryDict: Dict like                  # &#x5305;&#x542B;&#x4E86; GET &#x8BF7;&#x6C42;&#x63D0;&#x4EA4;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#xFF0C;ps&#xFF1A;QueryDict &#x662F; Dict &#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x89E3;&#x51B3;&#x4E86; HTML &#x590D;&#x9009;&#x6846;&#x8FD9;&#x79CD;&#x4E00;&#x4E2A; KEY &#x591A;&#x4E2A; Value &#x53C2;&#x6570;&#x7684; Dict &#x51B2;&#x7A81;
+POST               -&gt; QueryDict: Dict like                  # &#x5305;&#x542B; POST &#x63D0;&#x4EA4;&#x7684;&#x8868;&#x5355;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;
+COOKIES            -&gt; dict                                  # &#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x7684; cookies
+FILES              -&gt; MultiValueDict: Dict like             # &#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#xFF0C;key &#x662F;&#x4E0A;&#x4F20;&#x65F6;&#x8868;&#x5355;&#x4E0A;&#x7684; name&#xFF0C;value &#x662F;&#x4E00;&#x4E2A; UploadedFile &#x5BF9;&#x8C61;&#xFF0C;&#x53EA;&#x6709;&#x5F53; POST &#x7684; Content-Type &#x662F; &quot;multipart/form-data&quot; &#x683C;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x6709;&#x6570;&#x636E;&#xFF0C;ps:MultiValueDict &#x662F; Dict &#x7684;&#x5B50;&#x7C7B;&#xFF0C;
+</code></pre><h3 id="djangohttphttpresponse">django.http.HttpResponse</h3>
+<p><strong><em><a href="https://docs.djangoproject.com/en/dev/ref/request-response/#django.http.HttpResponse" title="HttpResponse&#x7C7B;&#x5C5E;&#x6027;&#x5B98;&#x65B9;&#x6587;&#x6863;" target="_blank">HttpResponse&#x7C7B;&#x5C5E;&#x6027;&#x5B98;&#x65B9;&#x6587;&#x6863;</a></em></strong></p>
+<p><strong><em><a href="https://docs.djangoproject.com/en/dev/ref/request-response/#django.http.StreamingHttpResponse" title="StreamingHttpResponse" target="_blank">StreamingHttpResponse&#x7C7B;&#x5C5E;&#x6027;&#x5B98;&#x65B9;&#x6587;&#x6863;</a></em></strong></p>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x5DE5;&#x4F5C;&#x5C31;&#x662F;&#x6839;&#x636E;&#x8BF7;&#x6C42;&#xFF0C;&#x6784;&#x9020;&#x54CD;&#x5E94;&#x6570;&#x636E;&#x5E76;&#x8FD4;&#x56DE;</p>
+<p>&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x6B63;&#x6587;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;string&#xFF0C;bytestring &#x6216;&#x8005; memoryview&#x5BF9;&#x8C61; &#x4EE5;&#x53CA;&#x6240;&#x6709;&#x7684;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</p>
+<pre><code>from django.http import HttpResponse
+response = HttpResponse(&quot;Here&apos;s the text of the Web page.&quot;)
+response = HttpResponse(b&apos;Bytestrings are also accepted.&apos;)
+response = HttpResponse(memoryview(b&apos;Memoryview as well.&apos;))
+
+# &#x5982;&#x679C;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#x5E0C;&#x671B;&#x589E;&#x52A0;&#x6B63;&#x6587;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x6587;&#x4EF6;&#x4E00;&#x6837;&#x5199;&#x5165;
+response = HttpResponse()
+response.write(&quot;&lt;p&gt;Here&apos;s the text of the Web page.&lt;/p&gt;&quot;)
+
+# &#x5982;&#x679C;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;HttpResponse &#x4F1A;&#x9A6C;&#x4E0A;&#x5C06;&#x5176;&#x8FED;&#x4EE3;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x4EE5;str&#x8FD4;&#x56DE;&#xFF0C;&#x6700;&#x540E;&#x5982;&#x679C;&#x6709; close() &#x7684;&#x5BF9;&#x8C61;&#x8FD8;&#x4F1A;&#x9A6C;&#x4E0A;&#x5173;&#x95ED;&#xFF0C;&#x4F8B;&#x5982; file() &#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x4EE5; stream &#x6D41;&#x7684;&#x5F62;&#x5F0F;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x7528;&#x5230; StreamingHttpResponse &#x5BF9;&#x8C61;
+</code></pre><p>&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x7684;&#x6D88;&#x606F;&#x62A5;&#x5934;&#xFF0C;&#x7528;&#x6CD5;&#x8DDF;&#x5B57;&#x5178;&#x4E00;&#x6837;&#xFF0C;&#x4E0D;&#x8FC7;&#x5BF9;&#x4E8E; Cache-Control &#x548C; Vary &#x63A8;&#x8350;&#x4F7F;&#x7528; django.utils.cache.patch_cache_control() &#x548C; django.utils.cache.patch_vary_headers()&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x54CD;&#x5E94;&#x5934;&#x80FD;&#x6709;&#x591A;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x503C;&#xFF0C;&#x4E0A;&#x9762;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x80FD;&#x907F;&#x514D;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x8BBE;&#x7F6E;&#x4E0D;&#x88AB;&#x8986;&#x76D6;</p>
+<pre><code>response = HttpResponse()
+response[&apos;Age&apos;] = 120       # &#x4E0D;&#x5141;&#x8BB8;&#x6709;&#x6362;&#x884C;&#x7B26;
+del response[&apos;Age&apos;]         # &#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x8BE5;&#x5B57;&#x6BB5;&#x5220;&#x9664;&#x4E5F;&#x4E0D;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x8FD9;&#x70B9;&#x8DDF; dict &#x4E0D;&#x540C;
+
+# &#x5982;&#x679C;&#x5E0C;&#x671B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x8BBE;&#x7F6E; Content-Type &#x4E3A;&#x5BF9;&#x5E94;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x8BBE;&#x7F6E; Content-Disposition &#x54CD;&#x5E94;&#x5934;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;xls&#x6587;&#x4EF6;
+response = HttpResponse(my_data, content_type=&apos;application/vnd.ms-excel&apos;)
+response[&apos;Content-Disposition&apos;] = &apos;attachment; filename=&quot;foo.xls&quot;&apos;
+</code></pre><p>HttpResponse &#x5C5E;&#x6027;</p>
+<pre><code>content             -&gt; bytes  # &#x8FD4;&#x56DE;&#x5185;&#x5BB9;
+charset             -&gt; str    # &#x5B57;&#x7B26;&#x96C6;
+status_code         -&gt; int    # &#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801;
+reason_phrase       -&gt; str    # &#x4E0E;&#x72B6;&#x6001;&#x7801;&#x914D;&#x5BF9;&#x7684;&#x6587;&#x672C;&#xFF0C;&#x4E0D;&#x8BBE;&#x7F6E;&#x5219;&#x81EA;&#x52A8;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x6807;&#x51C6;
+streaming           -&gt; bool   # &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x533A;&#x5206;&#x662F; HttpResponse &#x5BF9;&#x8C61;&#x8FD8;&#x662F; StreamingHttpResponse &#x5BF9;&#x8C61;&#xFF0C;&#x524D;&#x8005;&#x662F; False , &#x540E;&#x8005;&#x662F; True
+closed              -&gt; bool   # &#x5982;&#x679C;&#x4E3A;True&#x5219;&#x8868;&#x660E; Response &#x5BF9;&#x8C61;&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;
+</code></pre><h3 id="djangohttpstreaminghttpresponse">django.http.StreamingHttpResponse</h3>
+<p>StreamingHttpResponse &#x548C; HttpResponse &#x90FD;&#x662F; HttpResponseBase &#x7684;&#x5B50;&#x7C7B;</p>
+<p>&#x524D;&#x9762;&#x8BF4;&#x4E86;&#x5F53; HttpResponse &#x7528;&#x5F53;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x5B8C;&#x8BE5;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x975E;&#x5E38;&#x5927;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x4F8B;&#x5982;&#x4E00;&#x4E2A;&#x5927;CSV&#x6570;&#x636E;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5185;&#x5B58;&#x4F1A;&#x5D29;&#x6E83;&#xFF0C;&#x6B64;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Stream &#x6D41;&#x5F0F;&#x4F20;&#x8F93;</p>
+<p>StreamingHttpResponse &#x4E0E; HttpResponse &#x51E0;&#x4E4E;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x6709;&#x4EE5;&#x4E0B;&#x5DEE;&#x522B;</p>
+<ul>
+<li>&#x53EA;&#x80FD;&#x4F20;&#x5165;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x6B21; yield &#x8FD4;&#x56DE;&#x7684; string &#x4F1A;&#x4F5C;&#x4E3A;&#x4F20;&#x8F93;&#x5185;&#x5BB9;</li>
+<li>&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x7684;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x53D6;&#x4F20;&#x8F93;&#x5185;&#x5BB9;&#xFF08;HttpResponse&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;content&#x5C5E;&#x6027;&#xFF09;</li>
+<li>&#x6CA1;&#x6709; content &#x5C5E;&#x6027;&#xFF0C;&#x53EA;&#x6709; streaming_contetn &#x5C5E;&#x6027;</li>
+<li>&#x4E0D;&#x80FD;&#x50CF; file-like &#x5BF9;&#x8C61;&#x90A3;&#x6837;&#x8C03;&#x7528; tell(), write()&#x65B9;&#x6CD5;&#x5728;&#x521D;&#x59CB;&#x5316;&#x540E;&#x6DFB;&#x52A0;&#x8FD4;&#x56DE;&#x5185;&#x5BB9;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="TCP.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: TCP">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HTTP","level":"1.3","depth":1,"previous":{"title":"TCP","level":"1.2","depth":1,"path":"TCP.md","ref":"TCP.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"HTTP.md","mtime":"2019-09-10T04:36:14.573Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-10T01:43:05.100Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
