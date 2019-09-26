@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>TCP · GitBook</title>
+        <title>FAQ · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="HTTP.html" />
     
-    
-    <link rel="prev" href="./" />
+    <link rel="prev" href="HTTP.html" />
     
 
     </head>
@@ -102,7 +100,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="TCP.html">
+        <li class="chapter " data-level="1.2" data-path="TCP.html">
             
                 <a href="TCP.html">
             
@@ -128,7 +126,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="FAQ.html">
+        <li class="chapter active" data-level="1.4" data-path="FAQ.html">
             
                 <a href="FAQ.html">
             
@@ -171,7 +169,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >TCP</a>
+        <a href="." >FAQ</a>
     </h1>
 </div>
 
@@ -186,19 +184,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4E09;&#x6B21;&#x63E1;&#x624B;">&#x4E09;&#x6B21;&#x63E1;&#x624B;</h1>
-<p>&#x72B6;&#x6001;&#x8F6C;&#x6362; (SYN_SENT,SYN_RCVD,ESTABLISHED)</p>
-<p>&#x53D1;&#x5305;&#x5185;&#x5BB9; ({SYN=1,seq=x},{SYN=1,ACK=1,seq=x+1,ack=y},{ACK=1,ack=y+1})
-<img src="gitbook/images/TCP&#x4E09;&#x6B21;&#x63E1;&#x624B;.png" alt="TCP&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x56FE;"></p>
-<h1 id="&#x56DB;&#x6B21;&#x6325;&#x624B;">&#x56DB;&#x6B21;&#x6325;&#x624B;</h1>
-<p>&#x72B6;&#x6001;&#x8F6C;&#x6362; (ESTABLISHED,FIN_WAIT_1,FIN_WAIT_2,TIME_WAIT,CLOSE,CLOSE_WAIT,LAST_ACK)</p>
-<p>&#x53D1;&#x5305;&#x5185;&#x5BB9; ({FIN=1,seq=x},{ACK=1,ack=x+1},{FIN=1,seq=y},{ACK=1,ack=y+1})</p>
-<p>Client&#x90A3;&#x4E2A; TIME_WAIT &#x72B6;&#x6001;&#xFF0C;&#x4F1A;&#x7B49;&#x5F85; 2MSL &#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62; Client &#x54CD;&#x5E94;&#x62A5;&#x6587;&#x4E22;&#x5931;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x4E22;&#x5931;&#x7684;&#x8BDD;&#xFF0C;Server&#x4F1A;&#x91CD;&#x65B0;&#x53D1;&#x9001;&#x7ED3;&#x675F;&#x62A5;&#x6587;&#xFF0C;&#x7136;&#x540E; Client &#x5C31;&#x77E5;&#x9053;&#x4ED6;&#x7684;&#x54CD;&#x5E94;&#x62A5;&#x6587;&#x6CA1;&#x6709;&#x88AB;&#x6536;&#x5230;&#x4E86;&#x3002;
-<img src="gitbook/images/TCP&#x56DB;&#x6B21;&#x6325;&#x624B;.png" alt="TCP&#x56DB;&#x6B21;&#x6325;&#x624B;&#x56FE;"></p>
-<h1 id="tcp-vs-udp">TCP vs UDP</h1>
-<p>TCP&#xFF1A;&#x9762;&#x5411;&#x8FDE;&#x63A5;&#xFF0C;&#x53EF;&#x9760;&#xFF0C;&#x57FA;&#x4E8E;&#x5B57;&#x8282;&#x6D41;</p>
-<p>UDP&#xFF1A;&#x65E0;&#x8FDE;&#x63A5;&#xFF0C;&#x4E0D;&#x53EF;&#x9760;&#xFF0C;&#x57FA;&#x4E8E;&#x62A5;&#x6587;</p>
-<h1 id="wireshark">wireshark</h1>
+                                <h1 id="&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165;&#x4E00;&#x4E2A;url&#x5230;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7ECF;&#x5386;&#x7684;&#x8FC7;&#x7A0B;">&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165;&#x4E00;&#x4E2A;URL&#x5230;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7ECF;&#x5386;&#x7684;&#x8FC7;&#x7A0B;</h1>
+<ol>
+<li>&#x7ECF;&#x5386;&#x4E86;&#x54EA;&#x4E9B;&#x8FC7;&#x7A0B;</li>
+<li>&#x6BCF;&#x4E2A;&#x8FC7;&#x7A0B;&#x5BF9;&#x5E94;&#x4E86;&#x4EC0;&#x4E48;&#x534F;&#x8BAE;</li>
+<li>&#x6BCF;&#x4E2A;&#x534F;&#x8BAE;&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;
+&#x7269;&#x7406;&#x5C42;&#xFF0C;&#x94FE;&#x8DEF;&#x5C42;&#xFF0C;&#x7F51;&#x7EDC;&#x5C42;&#xFF0C;&#x8FD0;&#x8F93;&#x5C42;&#xFF0C;&#x5E94;&#x7528;&#x5C42;
+DNS&#x7F13;&#x5B58;&#xFF0C;&#x9012;&#x5F52;DNS&#x67E5;&#x8BE2;&#xFF0C;TCP&#x8FDE;&#x63A5;&#xFF0C;HTTP&#x8FDE;&#x63A5;&#xFF0C;&#x53CD;&#x5411;&#x4EE3;&#x7406;NGINX&#xFF0C;WSGI(uwsgi)&#xFF0C;WEB app(django),&#x65AD;&#x5F00;TCP&#x8FDE;&#x63A5;</li>
+</ol>
 
                                 
                                 </section>
@@ -226,14 +219,10 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="HTTP.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: HTTP">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="HTTP.html" class="navigation navigation-next " aria-label="Next page: HTTP">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -242,7 +231,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2","depth":1,"next":{"title":"HTTP","level":"1.3","depth":1,"path":"HTTP.md","ref":"HTTP.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"TCP.md","mtime":"2019-09-19T11:20:38.852Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-19T11:09:39.955Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"1.4","depth":1,"previous":{"title":"HTTP","level":"1.3","depth":1,"path":"HTTP.md","ref":"HTTP.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"FAQ.md","mtime":"2019-09-19T09:10:26.238Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-19T11:09:39.955Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
